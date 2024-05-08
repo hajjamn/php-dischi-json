@@ -4,27 +4,20 @@ createApp({
   data() {
     return {
       message: 'Hello Vue!',
-      records: [
-        {
-          title: "New Jersey",
-          author: "Bon Jovi",
-          year: 1988,
-          poster: "https://images-na.ssl-images-amazon.com/images/I/51sBr4IWDwL.jpg",
-          genre: "Rock"
-        },
-        {
-          title: "New Jersey",
-          author: "Bon Jovi",
-          year: 1988,
-          poster: "https://images-na.ssl-images-amazon.com/images/I/51sBr4IWDwL.jpg",
-          genre: "Rock"
-        }
-      ]
+      records: []
     }
   },
   methods: {
     fetchData() {
-      //axios
+      axios
+        .get('./server.php')
+        .then((res) => {
+          console.log(res.data)
+          this.records = res.data.results
+        })
     }
+  },
+  created() {
+    this.fetchData()
   }
 }).mount('#app')

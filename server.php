@@ -3,9 +3,11 @@
 $recordsString = file_get_contents('dischi.json');
 $recordsArray = json_decode($recordsString, true);
 
-var_dump($recordsArray);
+header('Content-type: application/json');
 
 $data = [
   'results' => $recordsArray,
   'succes' => true
 ];
+
+echo json_encode($data);

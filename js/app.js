@@ -4,7 +4,8 @@ createApp({
   data() {
     return {
       message: 'Hello Vue!',
-      records: []
+      records: [],
+      highlightedRecord: null,
     }
   },
   methods: {
@@ -15,6 +16,12 @@ createApp({
           console.log(res.data)
           this.records = res.data.results
         })
+    },
+    albumModal(album) {
+      this.highlightedRecord = album;
+    },
+    closeAlbumModal() {
+      this.highlightedRecord = null;
     }
   },
   created() {

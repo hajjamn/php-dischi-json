@@ -1,0 +1,25 @@
+:root {
+  --brand-darker: #06131F;
+  --brand-dark: #112030;
+  --brand-light: #1D2D3C;
+}
+
+.bg-brand-darker {
+  background-color: var(--brand-darker);
+}
+
+.bg-brand-light {
+  background-color: var(--brand-light);
+}
+
+.bg-brand-dark {
+  background-color: var(--brand-dark)
+}
+
+#app {
+  color: white;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

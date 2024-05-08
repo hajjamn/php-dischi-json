@@ -24,7 +24,20 @@
       </div>
     </header>
     <main class="flex-grow-1 bg-brand-light">
-
+      <div class="container py-3">
+        <div class="row">
+          <div class="col-4 p-5" v-for="record in records">
+            <div class="card bg-brand-dark text-center text-white">
+              <div class="card-body">
+                <img :src="record.poster" alt="" class="w-50">
+                <h3> {{record.title}} </h3>
+                <p> {{record.author}} </p>
+                <h4>{{record.year}}</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
   </div>
 
